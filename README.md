@@ -26,7 +26,7 @@ Then in Firefox:
 
 1. Open `about:debugging#/runtime/this-firefox`.
 2. Click **Load Temporary Add-on…**.
-3. Select `/home/woland/lt/manifest.json`.
+3. Select `manifest.json`.
 4. Reload the page being tested after loading or reloading the addon.
 
 Click the toolbar button to open square settings in a normal tab. Choose a
