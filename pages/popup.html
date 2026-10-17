@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="color-scheme" content="dark">
+  <title>LanguageTool Spellcheck</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>LanguageTool</h1>
+    <span id="status" class="dot" title="Checking server…"></span>
+    <label class="switch" title="Turn checking on or off everywhere">
+      <input id="enabled" type="checkbox">
+      <span class="track"></span>
+    </label>
+  </header>
+
+  <p id="error" class="error" hidden></p>
+
+  <main>
+    <label class="check" id="site-row" hidden>
+      <input id="site" type="checkbox">
+      <span>Disable on <b id="site-host"></b></span>
+    </label>
+
+    <label class="field">
+      <span>Server URL</span>
+      <input id="server" type="text" placeholder="http://127.0.0.1:8081" spellcheck="false" autocomplete="off">
+    </label>
+
+    <label class="field">
+      <span>Language</span>
+      <select id="language"></select>
+    </label>
+
+    <label class="field" id="variant-row" hidden>
+      <span>Variant</span>
+      <select id="variant"></select>
+    </label>
+
+    <label class="field" id="variants-row">
+      <span>Preferred variants</span>
+      <select id="variants" multiple size="4"></select>
+      <small>Auto-detect can tell English from German, but not British from
+        American. Pick the variants you write in.</small>
+    </label>
+
+    <label class="field">
+      <span>Native language</span>
+      <select id="mother"></select>
+      <small>Enables false-friend detection.</small>
+    </label>
+
+    <label class="check">
+      <input id="picky" type="checkbox">
+      <span>Picky mode — include style, typography, and comma rules</span>
+    </label>
+
+    <label class="check">
+      <input id="accents" type="checkbox">
+      <span>Ignore accents — skip fixes that only put missing accents back
+        (ultimo → último). A misplaced or dropped accent stays an error.</span>
+    </label>
+
+    <section>
+      <h2>Ignored words</h2>
+      <div id="words" class="chips"></div>
+    </section>
+
+    <section>
+      <h2>Auto-corrected</h2>
+      <ul id="auto" class="rules"></ul>
+    </section>
+
+    <section>
+      <h2>Disabled rules</h2>
+      <ul id="rules" class="rules"></ul>
+    </section>
+
+    <section>
+      <h2>Disabled fields</h2>
+      <ul id="fields" class="rules"></ul>
+    </section>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>

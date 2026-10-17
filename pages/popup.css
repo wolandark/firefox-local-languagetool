@@ -1,0 +1,283 @@
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  width: min(520px, 100vw);
+  min-height: 100vh;
+  margin: 0;
+  background: #202124;
+  color: #e8eaed;
+  font: 13px/1.45 system-ui, sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px 8px;
+  border-bottom: 1px solid #3c4043;
+}
+
+h1 {
+  flex: 1;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 0;
+  background: #9aa0a6;
+}
+
+.dot.ok    { background: #81c995; }
+.dot.error { background: #f28b82; }
+
+main {
+  padding: 10px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field > span,
+h2 {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #9aa0a6;
+  margin: 0;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 6px 8px;
+  background: #292a2d;
+  border: 1px solid #3c4043;
+  border-radius: 0;
+  color: #e8eaed;
+  font: inherit;
+}
+
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  border-color: #8ab4f8;
+}
+
+select[multiple] {
+  padding: 2px;
+  scrollbar-width: thin;
+}
+
+select[multiple] option {
+  padding: 2px 6px;
+  border-radius: 0;
+}
+
+.field small {
+  font-size: 11px;
+  line-height: 1.35;
+  color: #5f6368;
+}
+
+.switch {
+  position: relative;
+  flex: none;
+  width: 30px;
+  height: 17px;
+}
+
+.switch input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.switch .track {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background: #5f6368;
+  transition: background 0.15s;
+}
+
+.switch .track::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 13px;
+  height: 13px;
+  border-radius: 0;
+  background: #e8eaed;
+  transition: transform 0.15s;
+}
+
+.switch input:checked + .track {
+  background: #8ab4f8;
+}
+
+.switch input:checked + .track::after {
+  transform: translateX(13px);
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #bdc1c6;
+  cursor: pointer;
+}
+
+.check input {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  accent-color: #8ab4f8;
+}
+
+.check b {
+  font-weight: 600;
+  color: #e8eaed;
+}
+
+.error {
+  margin: 0;
+  padding: 8px 14px;
+  background: #3b2b2b;
+  border-bottom: 1px solid #5c3b3b;
+  font-size: 12px;
+  color: #f28b82;
+}
+
+body.off main {
+  opacity: 0.45;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-height: 140px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.chips:empty::before,
+.rules:empty::before {
+  content: 'None yet';
+  font-size: 12px;
+  font-style: italic;
+  color: #5f6368;
+}
+
+.chips:empty::before {
+  content: 'None yet — click an underlined word and choose Ignore';
+}
+
+#fields:empty::before {
+  content: 'None yet — click an underlined word and choose Disable here';
+}
+
+#auto:empty::before {
+  content: 'None yet — click an underlined word and choose Auto';
+}
+
+#auto .rule {
+  flex: none;
+  max-width: 45%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #9aa0a6;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 4px 2px 8px;
+  background: #292a2d;
+  border: 1px solid #3c4043;
+  border-radius: 0;
+  font-size: 12px;
+  white-space: pre;
+}
+
+.rules {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 140px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.rules li {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 0 2px 8px;
+  background: #292a2d;
+  border: 1px solid #3c4043;
+  border-radius: 0;
+  font-size: 11px;
+  font-family: ui-monospace, monospace;
+  overflow-wrap: anywhere;
+}
+
+.rules li span {
+  flex: 1;
+}
+
+.remove {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  color: #9aa0a6;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.remove:hover {
+  background: #3c4043;
+  color: #e8eaed;
+}

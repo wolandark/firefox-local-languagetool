@@ -1,0 +1,241 @@
+#lt-ext-root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  z-index: 2147483647;
+  pointer-events: none;
+}
+
+.lt-ext-box {
+  position: absolute;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+}
+
+.lt-ext-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.lt-ext-seg {
+  position: absolute;
+  border-bottom: 2px solid;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+.lt-ext-seg.lt-sev-spell   { border-color: #ff6259; background: rgba(255, 98, 89, 0.10); }
+.lt-ext-seg.lt-sev-grammar { border-color: #fbbc04; background: rgba(251, 188, 4, 0.10); }
+.lt-ext-seg.lt-sev-style   { border-color: #6aa9ff; background: rgba(106, 169, 255, 0.10); }
+
+.lt-ext-mirror {
+  position: absolute;
+  top: -100000px;
+  left: -100000px;
+  visibility: hidden;
+  pointer-events: none;
+  min-height: 0;
+}
+
+.lt-ext-popup {
+  position: fixed;
+  pointer-events: auto;
+  z-index: 2147483647;
+  background: #202124;
+  border: 1px solid #3c4043;
+  border-radius: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+  max-width: 300px;
+  padding: 4px 0 2px;
+  color: #e8eaed;
+  font: 13px/1.45 system-ui, sans-serif;
+  text-align: start;
+  color-scheme: dark;
+}
+
+.lt-ext-pop-short {
+  padding: 8px 14px 0;
+  font-weight: 600;
+}
+
+.lt-ext-pop-msg {
+  padding: 10px 14px;
+  border-top: 1px solid #3c4043;
+  color: #bdc1c6;
+}
+
+.lt-ext-popup > *:first-child {
+  border-top: 0;
+}
+
+.lt-ext-pop-sug {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+  padding: 0 8px 10px;
+}
+
+.lt-ext-pop-item,
+.lt-ext-pop-auto {
+  box-sizing: border-box;
+  font: 13px/18px system-ui, sans-serif;
+  padding: 4px 8px;
+}
+
+.lt-ext-pop-item {
+  flex: none;
+  max-width: 100%;
+  background: #303134;
+  border: 0;
+  border-radius: 0;
+  color: #e8eaed;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lt-ext-pop-item:hover {
+  background: #45484c;
+}
+
+.lt-ext-pop-item:first-child {
+  background: #354152;
+  color: #fff;
+}
+
+.lt-ext-pop-item:first-child:hover {
+  background: #405066;
+}
+
+.lt-ext-pop-item.lt-ext-ws {
+  font-style: italic;
+}
+
+.lt-ext-pop-pair {
+  display: inline-flex;
+  flex: none;
+  min-width: 0;
+  max-width: 100%;
+  gap: 1px;
+}
+
+.lt-ext-pop-item.lt-ext-pop-pair-main {
+  border-radius: 0;
+  min-width: 0;
+}
+
+.lt-ext-pop-auto {
+  flex: none;
+  background: #2c3a4d;
+  border: 0;
+  border-radius: 0;
+  color: #8ab4f8;
+  cursor: pointer;
+  white-space: nowrap;
+  
+  font-size: 15px;
+}
+
+.lt-ext-pop-auto:hover {
+  background: #38495f;
+}
+
+.lt-ext-pop-auto.lt-ext-on {
+  background: #2a3a2c;
+  color: #81c995;
+  cursor: default;
+}
+
+.lt-ext-pop-rule {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 14px;
+  font-size: 11px;
+  color: #9aa0a6;
+}
+
+.lt-ext-pop-rule-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.lt-ext-dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 0;
+}
+
+.lt-ext-dot.lt-sev-spell   { background: #ff6259; }
+.lt-ext-dot.lt-sev-grammar { background: #fbbc04; }
+.lt-ext-dot.lt-sev-style   { background: #6aa9ff; }
+
+.lt-ext-pop-link {
+  flex: none;
+  color: #8ab4f8;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.lt-ext-pop-link:hover {
+  text-decoration: underline;
+}
+
+.lt-ext-pop-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+  padding: 10px 8px;
+  border-top: 1px solid #3c4043;
+}
+
+.lt-ext-pop-act {
+  flex: none;
+  background: #303134;
+  border: 0;
+  border-radius: 0;
+  padding: 4px 7px;
+  color: #8ab4f8;
+  font: 12px system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.lt-ext-pop-act:hover {
+  background: #45484c;
+}
+
+.lt-ext-pop-note {
+  padding: 4px 7px;
+  font-size: 11px;
+  font-style: italic;
+  color: #9aa0a6;
+}
+
+.lt-ext-pop-lang {
+  margin-left: auto;
+  align-self: flex-end; 
+  padding-left: 6px;
+  font-size: 10px;
+  line-height: 12px;
+  color: #80868b;
+}
+
+.lt-ext-popup > .lt-ext-pop-lang {
+  padding: 0 10px 4px;
+  text-align: end;
+}
+
+.lt-ext-pop-error {
+  padding: 4px 14px 8px;
+  font-size: 11px;
+  color: #f28b82;
+}
