@@ -42,3 +42,7 @@ With the server running:
 ```sh
 ./test.sh
 ```
+
+# Screenshot 
+<img width="1038" height="507" alt="image" src="https://github.com/user-attachments/assets/a99bb80d-8313-4f2e-8f43-89e6a5a07b95" />
+
